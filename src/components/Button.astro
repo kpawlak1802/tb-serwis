@@ -8,6 +8,6 @@ interface Props {
 const { text, href } = Astro.props as Props
 
 ---
-<a href={href} class="w-max">
+<a href={href || "#"} class="w-max">
   <button class="w-max bg-secondary px-5 py-2 rounded-3xl text-sm duration-100 md:text-base lg:px-7 xl:text-xl xl:py-3 xl:rounded-full hover:scale-105">{text}</button>
 </a>

@@ -6,6 +6,7 @@ interface CardContent {
 
 import Button from '../components/Button.astro'
 import { Image } from 'astro:assets'
+import img1 from '../content/images/img1.jpg'
 import Card from '../components/Card.astro'
 const cardsContent:CardContent[] = [
   {
@@ -13,7 +14,7 @@ const cardsContent:CardContent[] = [
     svg: "/images/trophy.svg"
   },
   {
-    content: "Szybka realizacjia",
+    content: "Szybka realizacja",
     svg: "/images/clock.svg"
   },
   {
@@ -29,11 +30,11 @@ const cardsContent:CardContent[] = [
       <span class="text-secondary">Usługi </span><span>WUKO i kamerowania</span>
     </div>
     <p class="text-[white] xl:text-lg 2xl:text-xl">
-      Świadczymy kompleksowe usługi z zakresu utrzymania infrastruktury kanalizacyjnej, zapewniając najwyższą jakość i szybki czas reakcji. Obsługujemy klientów indywidualnych, przedsiębiorstwa oraz instytucje publiczne.
+      Świadczymy kompleksowe usługi z zakresu utrzymania infrastruktury kanalizacyjnej, zapewniając najwyższą jakość i szybki czas realizacji. Obsługujemy klientów indywidualnych, przedsiębiorstwa oraz instytucje publiczne.
     </p>
     <Button text="Dowiedz się więcej" />
   </div>
-  <Image class="hidden lg:block 2xl:w-[400px]" src="/images/img1.jpg" alt="Zdjęcie vana" width="350" height="350" />
+  <Image class="hidden lg:block 2xl:w-[400px]" src={img1} alt="Zdjęcie vana" width="350" height="350" />
   <div class="hidden absolute gap-3 md:flex md:bottom-[-70px] md:right-10 lg:left-[20%] xl:left-[24%]">
     {
       cardsContent.map((text, index) => <Card content={text.content} path={text.svg} />)
