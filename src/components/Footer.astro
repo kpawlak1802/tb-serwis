@@ -1,0 +1,36 @@
+---
+import FooterTile from './FooterTile.astro'
+
+const content = [
+  {
+    svg: '/images/pin.svg',
+    text: 'ul. Kartuska 343/35, 80-125 Gdańsk',
+    type: 'link',
+    href: 'https://www.google.pl/maps/place/Kartuska+343,+80-125+Gdańsk/@54.3386411,18.5672407,17z/data=!4m6!3m5!1s0x46fd743eedf7bbdf:0xdc3b166969c18ba0!8m2!3d54.3383158!4d18.5683029!16s%2Fg%2F11c4fq1rrh?entry=ttu'
+  },
+  {
+    svg: '/images/fb.svg',
+    text: 'TB Serwis',
+    type: 'link',
+    href: 'https://www.facebook.com/profile.php?id=100068298284110'
+  },
+  {
+    svg: '/images/email.svg',
+    text: 'Tb.serwis.tb@gmail.com',
+    type: 'mail',
+    href: 'Tb.serwis.tb@gmail.com'
+  },
+  {
+    svg: '/images/phone.svg',
+    text: '737328048 - 737325755',
+    type: 'phone',
+    href: '737328048-737325755'
+  }
+]
+
+---
+<footer class="bg-secondary flex flex-wrap justify-around sm:p-2 lg:flex-row">
+  {
+    content.map((tile, index) => <FooterTile key={`element-${index}`} svg={tile.svg} text={tile.text} type={tile.type} href={tile.href} />)
+  }
+</footer>

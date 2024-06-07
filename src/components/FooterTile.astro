@@ -1,0 +1,33 @@
+---
+import {Image} from "astro:assets";
+interface Props {
+  svg: string,
+  text: string,
+  type: string,
+  href: string
+}
+
+const { svg, text, type, href } = Astro.props as Props
+
+let numbers
+if(type === 'phone'){
+  numbers = href.split('-')
+}
+
+---
+<div class="p-1 flex justify-center sm:inline-block sm:w-[300px] md:w-[350px] lg:w-max">
+  <div class="w-[300px] sm:w-max flex items-center gap-2 lg:gap-5">
+    <a class="flex items-center gap-2">
+      <div class="bg-primary rounded-full min-h-[50px] min-w-[50px] flex justify-center lg:min-w-[60px] lg:min-h-[60px]">
+        <Image src={svg} alt={text} width="30" height="30" />
+      </div>
+      <div class="font-bold text-sm h-max md:text-base xl:text-lg">
+        {
+          numbers
+            ? numbers.map((num, index) => <a href={`tel:${num}`}>{num}</a><span class="inline">{index !== numbers.length - 1 && ' - '}</span>)
+            : <a href={type === 'mail' ? `mailto:${href}` : href} target={type === 'link' && '_blank'}>{text}</a>
+        }
+      </div>
+    </a>
+  </div>
+</div>
