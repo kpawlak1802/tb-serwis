@@ -1,6 +1,6 @@
 ---
 import ServiceItem from "./ServiceItem.astro";
-const servicesList = [
+const mainServicesList = [
     {
       title: 'Ciśnieniowe czyszczenia studzienek kanalizacyjnych'
     },
@@ -23,13 +23,47 @@ const servicesList = [
       title: 'Kamerowanie'
     },
   ]
----
-<section class="p-6 flex flex-col gap-1.5 md:py-14">
-  <h3 class="text-xl font-bold md:text-2xl xl:text-3xl 2xdl:text-4xl">Nasze usługi</h3>
-  <p class="text-sm md:text-base xl:text-lg">Nasza firma oferuje wykonanie wielu usług. O to nasza oferta, którą przygotowaliśmy dla naszych klientów:</p>
-  <ul class="flex flex-wrap justify-center gap-3 mt-2">
+
+  const otherServicesList = [
     {
-      servicesList.map((service, index) => <ServiceItem key={`service-${index}`} title={service.title} />)
-    }
-  </ul>
+      title: 'Sprzątanie i dezynfekcja pomieszczeń po zalaniu'
+    },
+    {
+      title: 'Sprzątanie lokali po remontach'
+    },
+    {
+      title: 'Ciśnieniowe mycie powierzchni'
+    },
+    {
+      title: 'Deratyzacja'
+    },
+    {
+      title: 'Prace remontowe'
+    },
+    {
+      title: 'Prace hydrauliczne'
+    },
+    {
+      title: 'Prace elektryczne'
+    },
+  ]
+---
+<section class="p-6 flex flex-col gap-10 md:px-14 md:pt-32">
+  <div>
+    <h3 class="text-xl font-bold md:text-2xl xl:text-3xl 2xl:text-4xl">Nasze usługi</h3>
+    <p class="text-sm md:text-base xl:text-lg mt-3">Nasza firma oferuje wykonanie wielu usług. O to oferta usług, w których się specjalizujemy:</p>
+    <ul class="flex flex-wrap justify-center gap-3 mt-2">
+      {
+        mainServicesList.map((service, index) => <ServiceItem key={`service-${index}`} title={service.title} />)
+      }
+    </ul>
+  </div>
+  <div>
+    <p class="text-sm md:text-base xl:text-lg">Poza wyżej wymienionymi usługami, nasza firma wykonuje również:</p>
+    <ul class="flex flex-wrap justify-center gap-3 mt-2">
+      {
+        otherServicesList.map((service, index) => <ServiceItem key={`service-${index}`} title={service.title} />)
+      }
+    </ul>
+  </div>
 </section>
