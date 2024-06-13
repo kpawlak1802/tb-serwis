@@ -4,7 +4,8 @@ export default {
 	theme: {
 		colors: {
       "primary": "#1332A7",
-      "secondary": "#FDCD4F"
+      "secondary": "#FDCD4F",
+			"white": "#fff"
     },
 	},
 	plugins: [],

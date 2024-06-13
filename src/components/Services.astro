@@ -1,0 +1,35 @@
+---
+import ServiceItem from "./ServiceItem.astro";
+const servicesList = [
+    {
+      title: 'Ciśnieniowe czyszczenia studzienek kanalizacyjnych'
+    },
+    {
+      title: 'Udrażnianie kanalizacji'
+    },
+    {
+      title: 'Udrażnianie zewnętrznych instalacji sanitarnych i deszczowych'
+    },
+    {
+      title: 'Czyszczenie drenaży'
+    },
+    {
+      title: 'Płukanie rurociągów i zbiorników'
+    },
+    {
+      title: 'Usuwanie osadów z sieci.'
+    },
+    {
+      title: 'Kamerowanie'
+    },
+  ]
+---
+<section class="p-6 flex flex-col gap-1.5 md:py-14">
+  <h3 class="text-xl font-bold md:text-2xl xl:text-3xl 2xdl:text-4xl">Nasze usługi</h3>
+  <p class="text-sm md:text-base xl:text-lg">Nasza firma oferuje wykonanie wielu usług. O to nasza oferta, którą przygotowaliśmy dla naszych klientów:</p>
+  <ul class="flex flex-wrap justify-center gap-3 mt-2">
+    {
+      servicesList.map((service, index) => <ServiceItem key={`service-${index}`} title={service.title} />)
+    }
+  </ul>
+</section>

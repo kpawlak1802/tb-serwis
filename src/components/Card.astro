@@ -7,7 +7,7 @@ interface Props {
 
 const { content, path } = Astro.props as Props
 ---
-<div class="bg-[white] shadow-lg rounded-xl flex flex-col items-center w-[130px] p-3 justify-between h-[140px] lg:w-[140px] lg:h-[160px] xl:w-[160px] 2xl:w-max 2xl:h-[140px] 2xl:p-6">
+<div class="bg-[white] shadow-xl rounded-xl flex flex-col items-center w-[130px] p-3 justify-between h-[140px] lg:w-[140px] lg:h-[160px] xl:w-[160px] 2xl:w-max 2xl:h-[140px] 2xl:p-6">
   <p class="text-center lg:text-lg xl:text-xl">{content}</p>
   <Image src={path} alt={content} width="50" height="50" />
 </div>
