@@ -1,0 +1,60 @@
+---
+import {Image} from "astro:assets";
+
+---
+<footer class="bg-secondary flex flex-wrap justify-around font-bold text-sm gap-2 p-1 sm:p-2 md:text-base lg:flex-row xl:text-lg">
+  <div class="p-1 flex justify-center sm:inline-block sm:w-[300px] md:w-[350px] lg:w-max">
+    <div class="w-[300px] sm:w-max flex items-center gap-2 lg:gap-5">
+      <a class="flex items-center gap-2">
+        <div class="bg-primary rounded-full min-h-[50px] min-w-[50px] flex justify-center items-center lg:min-w-[60px] lg:min-h-[60px]">
+          <Image src='/images/pin.svg' alt='Lokalizacja' width="30" height="30" />
+        </div>
+        <div class="font-bold h-max">
+          <a href='https://www.google.pl/maps/place/Kartuska+343,+80-125+Gdańsk/@54.3386411,18.5672407,17z/data=!4m6!3m5!1s0x46fd743eedf7bbdf:0xdc3b166969c18ba0!8m2!3d54.3383158!4d18.5683029!16s%2Fg%2F11c4fq1rrh?entry=ttu' target="_blank">ul. Kartuska 343/35, 80-125 Gdańsk</a>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="p-1 flex justify-center sm:inline-block sm:w-[300px] md:w-[350px] lg:w-max">
+    <div class="w-[300px] sm:w-max flex items-center gap-2 lg:gap-5">
+      <a class="flex items-center gap-2">
+        <div class="bg-primary rounded-full min-h-[50px] min-w-[50px] flex justify-center items-center lg:min-w-[60px] lg:min-h-[60px]">
+          <Image src='/images/fb.svg' alt='Facebook' width="30" height="30" />
+        </div>
+        <div class="font-bold h-maxg">
+          <a href='https://www.facebook.com/profile.php?id=100068298284110' target="_blank">TB Serwis</a>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="p-1 flex justify-center sm:inline-block sm:w-[300px] md:w-[350px] lg:w-max">
+    <div class="w-[300px] sm:w-max flex items-center gap-2 lg:gap-5">
+      <a class="flex items-center gap-2">
+        <div class="bg-primary rounded-full min-h-[50px] min-w-[50px] flex justify-center items-center lg:min-w-[60px] lg:min-h-[60px]">
+          <Image src='/images/email.svg' alt='Mail' width="30" height="30" />
+        </div>
+        <div class="font-bold h-max">
+          <a href='mailto:Tb.serwis.tb@gmail.com'>Tb.serwis.tb@gmail.com</a>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="p-1 flex justify-center sm:inline-block sm:w-[300px] md:w-[350px] lg:w-max">
+    <div class="w-[300px] sm:w-max flex items-center gap-2 lg:gap-5">
+      <a class="flex items-center gap-2">
+        <div class="bg-primary rounded-full min-h-[50px] min-w-[50px] flex justify-center items-center lg:min-w-[60px] lg:min-h-[60px]">
+          <Image src='/images/phone.svg' alt='Telefon' width="30" height="30" />
+        </div>
+        <div class="font-bold h-max">
+          <a href='tel:737328048'>737328048</a>
+          &#45;
+          <a href="tel:737325755">737325755</a>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="w-full text-center lg:text-left lg:pl-5">
+    <Image class="inline" src='/images/develoArt.svg' alt='Telefon' width="30" height="30" />
+    <span>Develoart</span>
+  </div>
+</footer>
