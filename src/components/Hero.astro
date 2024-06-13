@@ -1,0 +1,43 @@
+---
+interface CardContent {
+  content: string;
+  svg: string;
+}
+
+import Button from '../components/Button.astro'
+import { Image } from 'astro:assets'
+import img1 from '../content/images/img1.jpg'
+import Card from '../components/Card.astro'
+const cardsContent:CardContent[] = [
+  {
+    content: "Najwyższa jakość",
+    svg: "/images/trophy.svg"
+  },
+  {
+    content: "Szybka realizacja",
+    svg: "/images/clock.svg"
+  },
+  {
+    content: "Gwarantowane zadowolenie",
+    svg: "/images/like.svg"
+  },
+]
+---
+<section class="relative min-h-[350px] w-dvh p-6 flex items-center justify-between bg-primary sm:min-h-[300px] xl:justify-around 2xl:justify-around">
+  <div class="flex flex-col gap-5 lg:w-7/12 xl:w-8/12 2xl:w-8/12">
+    <div class="text-3xl text-[white] font-bold md:text-4xl xl:text-5xl 2xl:text-6xl">
+      <h1>TB serwis</h1>
+      <span class="text-secondary">Usługi </span><span>WUKO i kamerowania</span>
+    </div>
+    <p class="text-[white] xl:text-lg 2xl:text-xl">
+      Świadczymy kompleksowe usługi z zakresu utrzymania infrastruktury kanalizacyjnej, zapewniając najwyższą jakość i szybki czas realizacji. Obsługujemy klientów indywidualnych, przedsiębiorstwa oraz instytucje publiczne.
+    </p>
+    <Button text="Dowiedz się więcej" />
+  </div>
+  <Image class="hidden lg:block 2xl:w-[400px]" src={img1} alt="Zdjęcie vana" width="350" height="350" />
+  <div class="hidden absolute gap-3 md:flex md:bottom-[-70px] md:right-10 lg:left-[20%] xl:left-[24%]">
+    {
+      cardsContent.map((text, index) => <Card content={text.content} path={text.svg} />)
+    }
+  </div>
+</section>
